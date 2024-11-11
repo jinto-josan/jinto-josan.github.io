@@ -38,6 +38,7 @@
           },
           "configurations": {
             "production": {
+              "base-href": "/",
               "budgets": [
                 {
                   "type": "initial",
