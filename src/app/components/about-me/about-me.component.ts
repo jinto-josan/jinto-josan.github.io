@@ -21,8 +21,5 @@ export class AboutMeComponent {
     contactInfo: 'jintojosan@gmail.com'
   };
 
-  // // Placeholder for handling edit or view more actions
-  // onEditClick() {
-  //   console.log('Edit button clicked!');
-  // }
+
 }
