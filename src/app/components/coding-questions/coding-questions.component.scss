@@ -1,0 +1,14 @@
+.coding-questions-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 16px;
+  }
+  
+  .coding-question-card {
+    background-color: $card-bg-light;
+  
+    &.dark-theme {
+      background-color: $card-bg-dark;
+    }
+  }
+  
