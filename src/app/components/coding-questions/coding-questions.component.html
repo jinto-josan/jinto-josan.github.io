@@ -1,0 +1,12 @@
+<div class="coding-questions-cards">
+    <mat-card *ngFor="let question of codingQuestions" class="coding-question-card">
+      <mat-card-header>
+        <mat-card-title>{{ question.title }}</mat-card-title>
+        <mat-card-subtitle>{{ question.difficulty }} - {{ question.status }}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <a mat-button href="{{ question.link }}" target="_blank">Solve it!</a>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  
