@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, inject, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, inject, ViewChild, ViewChildren } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule, MatIconRegistry } from '@angular/material/icon';
 import { AboutMeComponent } from './components/about-me/about-me.component';
@@ -10,6 +10,8 @@ import {MatTabsModule} from '@angular/material/tabs'
 import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { DomSanitizer } from '@angular/platform-browser';
+import { SkillsComponent } from './components/skills/skills.component';
+import { UtilityService } from './services/utility.service';
 
 
 
@@ -27,7 +29,7 @@ import { DomSanitizer } from '@angular/platform-browser';
     ProjectsComponent,
     BooksComponent,
     CodingQuestionsComponent,
-    AboutMeComponent,
+    AboutMeComponent, SkillsComponent,
     RouterLink,CommonModule
   ]
 })
@@ -37,26 +39,22 @@ export class AppComponent implements AfterViewInit {
     github:'https://github.com/jinto-josan',
     linkedin:'https://linkedin.com/in/jinto-josan'
   }
-  links = ['profile', 'projects', 'books','code questions'];
+  links = ['profile','skills', 'projects', 'books'];
   activeLink='';
-  @ViewChild('profile') profile: ElementRef | undefined;
-  @ViewChild('projects') projects: ElementRef | undefined;
-  @ViewChild('books') books: ElementRef | undefined;
-  @ViewChild('codeQuestions') codeQuestion: ElementRef | undefined;
+  @ViewChildren('section') sections:ElementRef[]|undefined;
+  utility=inject(UtilityService)
+
 
   private observer: IntersectionObserver;
   constructor(private iconRegistry:MatIconRegistry, private sanitizer:DomSanitizer){
     const options = {
       root: null,
       rootMargin: '0px',
-      threshold: 0.5
+      threshold: 0.3
     };
     this.registerIcons();
 
     this.observer = new IntersectionObserver(this.onIntersectionChange.bind(this), options);
-  }
-  getKeys(obj:any){
-    return Object.keys(obj);
   }
 
   registerIcons(){    
@@ -69,6 +67,7 @@ export class AppComponent implements AfterViewInit {
   }
   onIntersectionChange(entries: IntersectionObserverEntry[]) {
     entries.forEach(entry => {
+      console.log(entry.target, entry.isIntersecting)
       if (entry.isIntersecting) {
         this.activeLink = entry.target.id;
       }
@@ -76,20 +75,9 @@ export class AppComponent implements AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    // Start observing the sections after view initialization
-    console.log(this.profile)
-    if (this.profile) {
-      this.observer.observe(this.profile.nativeElement);
-    }
-    if (this.projects) {
-      this.observer.observe(this.projects.nativeElement);
-    }
-    if (this.books) {
-      this.observer.observe(this.books.nativeElement);
-    }
-    if (this.codeQuestion) {
-      this.observer.observe(this.codeQuestion.nativeElement);
-    }
+    this.sections?.forEach(section=>{
+      this.observer.observe(section.nativeElement)
+    })
   }
 
 

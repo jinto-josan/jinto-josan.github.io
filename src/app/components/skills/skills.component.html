@@ -1,0 +1,20 @@
+<div class="skills-grid-container">
+    <!-- Backend Section -->
+     @for(category of utility.getKeys(skillSet); track category){
+        <mat-card class="skill-card">
+            <mat-card-header>
+              <mat-card-title>{{category|titlecase}} Skills</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                @for(skill of skillSet[category];track skill){
+                    <div class="skill">
+                        <span>{{skill.name}}</span>
+                        <mat-progress-bar mode="determinate" [value]="skill.value"></mat-progress-bar>
+                    </div>
+                }
+                
+            </mat-card-content>
+        </mat-card>
+     }
+  </div>
+  

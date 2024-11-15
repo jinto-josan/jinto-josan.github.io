@@ -1,0 +1,20 @@
+.skills-grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Responsive grid */
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .skill-card {
+    padding: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .skill {
+    margin-bottom: 15px;
+  }
+  
+  mat-progress-bar {
+    height: 20px;
+  }
+  

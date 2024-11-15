@@ -12,7 +12,7 @@
         [active]="activeLink == link"> {{link|titlecase}} </a>
     }
   </nav>
-  @for(icon of getKeys(icons); track icon){
+  @for(icon of utility.getKeys(icons); track icon){
     <a mat-icon-button [href]="icons[icon]" target="_blank">
       <mat-icon [svgIcon]="icon" aria-hidden="false" 
           aria-label="Linkedin"></mat-icon>
@@ -23,22 +23,18 @@
   </button>
 </mat-toolbar>
 <div class="section-container">
-  <div #profile id="profile" class="section">
+  <div #section id="profile" class="section">
     <app-about-me ></app-about-me>
   </div>
-  
-  <div #projects id="projects" class="section">
-    <!-- <app-projects ></app-projects> -->
+  <div #section id="skills" class="section">
+    <app-skills ></app-skills>
+  </div>  
+  <div #section id="projects" class="section">
+    <app-projects ></app-projects>
+  </div>  
+  <div #section id="books" class="section">
+    <app-books ></app-books>
   </div>
-  
-  <div #books id="books" class="section">
-    <!-- <app-books ></app-books> -->
-  </div>
-  
-  <div #codeQuestions id="code questions" class="section">
-    <!-- <app-coding-questions ></app-coding-questions> -->
-  </div>
-
 </div>
 
 
