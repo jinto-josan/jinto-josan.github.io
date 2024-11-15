@@ -9,4 +9,7 @@ export class UtilityService {
   getKeys(obj:any){
     return Object.keys(obj);
   }
+  getEnumName(enumObject: any, value: number | string): string | undefined {
+    return enumObject[value];
+  }
 }

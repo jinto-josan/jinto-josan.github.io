@@ -1,14 +1,26 @@
 .project-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 25vw));
     gap: 16px;
   }
   
-  .project-card {
-
-  
+  .project-card { 
     .mat-chip {
       margin: 5px;
     }
   }
-  
+  mat-icon {
+    margin-right: 8px;
+    font-size: 20px;
+  }
+  .status-container {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 5px 10px;
+    border-radius: 20px;
+  }
+  .spacer {
+    flex: 1 1 auto;
+  }
