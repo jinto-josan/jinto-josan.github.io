@@ -1,3 +1,13 @@
+p {
+  font-size: 1em;
+  margin-bottom: 15px;
+}
+.bold {
+  font-weight: bold;
+}
+.emoji {
+  font-size: 1.2em;
+}
 .about-me-card {
   margin: 16px;
   padding: 16px;
@@ -10,8 +20,8 @@
 }
 
 .profile-image {
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
   margin-right: 16px;
 }
@@ -41,3 +51,13 @@ button {
 button mat-icon {
   margin-right: 8px;
 }
+
+// .social-links a {
+//   text-decoration: none;
+//   margin-right: 15px;
+//   color: #333;
+//   font-size: 1.5em;
+// }
+// .social-links a:hover {
+//   color: #0077b5; /* LinkedIn blue color, change on hover */
+// }

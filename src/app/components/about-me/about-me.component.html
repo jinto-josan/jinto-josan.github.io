@@ -1,13 +1,33 @@
 <mat-card class="about-me-card">
   <mat-card-header>
-    <mat-card-title>About Me</mat-card-title>
+    <!-- <mat-card-title>{{aboutMe.name}}</mat-card-title> -->
   </mat-card-header>
   <mat-card-content>
     <div class="profile-info">
-      <img mat-card-avatar [src]="aboutMe.profilePicture" alt="Profile Picture" class="profile-image"/>
+      <img mat-card-avatar [src]="aboutMe.profilePicture" alt="Profile Picture" class="profile-image" />
       <div class="bio-info">
-        <h3>{{ aboutMe.name }}</h3>
-        <p>{{ aboutMe.bio }}</p>
+        <p><span class="emoji">👋</span> <span class="bold">Hello!</span></p>
+        <p>
+          I’m a <span class="bold">software developer</span> proficient in <span class="bold">.NET</span>, <span
+            class="bold">Java</span>, <span class="bold">Angular</span>, and <span class="bold">Azure</span>, bringing
+          both <span class="bold">technical expertise</span> and <span class="bold">leadership experience</span> to the
+          table. I have successfully managed small teams, ensuring the smooth execution of projects from <span
+            class="bold">concept to deployment</span>, and I have a proven track record of delivering solutions that
+          meet both <span class="bold">client</span> and <span class="bold">business needs</span>.
+        </p>
+
+        <p>
+          Currently, I work at <span class="bold">Daimler Truck Innovation Center India (DTICI), Bangalore, India</span>, where I am responsible for <span
+            class="bold">building scalable cloud solutions</span> and <span class="bold">driving improvements</span> to
+          development pipelines. I am always eager to <span class="bold">learn</span> and <span
+            class="bold">grow</span>, adapting quickly to new tools and frameworks <span class="emoji">🚀</span>.
+        </p>
+
+        <p>
+          When I'm not working, I’m either <span class="bold">watching anime</span> <span class="emoji">🎥</span> or
+          diving into <span class="bold">books on personal development and psychology</span> <span
+            class="emoji">📚</span>—two passions that help keep me sharp and creatively inspired.
+        </p>
         <div class="skills">
           <mat-chip *ngFor="let skill of aboutMe.skills">{{ skill }}</mat-chip>
         </div>

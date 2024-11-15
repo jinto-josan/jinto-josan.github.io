@@ -1,26 +1,53 @@
-<mat-toolbar color="primary">
-  <span>My Profile</span>
+<mat-toolbar>
+  <span>
+    <span>MOYALAN JINTO JOSAN</span>
+     
+  </span>
   <span class="spacer"></span>
+  <mat-tab-nav-panel #tabPanel></mat-tab-nav-panel>
+  <nav mat-tab-nav-bar [tabPanel]="tabPanel">
+    @for (link of links; track link) {
+      <a mat-tab-link [href]="'#'+link"
+        (click)="activeLink = link"
+        [active]="activeLink == link"> {{link|titlecase}} </a>
+    }
+  </nav>
+  @for(icon of getKeys(icons); track icon){
+    <a mat-icon-button [href]="icons[icon]" target="_blank">
+      <mat-icon [svgIcon]="icon" aria-hidden="false" 
+          aria-label="Linkedin"></mat-icon>
+    </a>
+  }   
   <button mat-icon-button (click)="toggleTheme()">
-    <mat-icon>{{ isDarkMode ? 'brightness_4' : 'brightness_7' }}</mat-icon>
+    <mat-icon>{{ isLightMode ?  'brightness_7' : 'brightness_4' }}</mat-icon>
   </button>
 </mat-toolbar>
+<div class="section-container">
+  <div #profile id="profile" class="section">
+    <app-about-me ></app-about-me>
+  </div>
+  
+  <div #projects id="projects" class="section">
+    <!-- <app-projects ></app-projects> -->
+  </div>
+  
+  <div #books id="books" class="section">
+    <!-- <app-books ></app-books> -->
+  </div>
+  
+  <div #codeQuestions id="code questions" class="section">
+    <!-- <app-coding-questions ></app-coding-questions> -->
+  </div>
 
-<mat-tab-group>
-  <mat-tab label="Profile">
-    <app-about-me></app-about-me>
-  </mat-tab>
-  <mat-tab label="Projects" disabled="true">
-    <app-projects></app-projects>
-  </mat-tab>
-  
-  <mat-tab label="Books" disabled="true">
-    <app-books></app-books>
-  </mat-tab>
-  
-  <mat-tab label="Coding Questions" disabled="true">
-    <app-coding-questions></app-coding-questions>
-  </mat-tab>
-</mat-tab-group>
+</div>
+
+
+
+
+
+
+
+
+
 
 

@@ -15,7 +15,6 @@ import { MatChipsModule } from '@angular/material/chips';
 export class AboutMeComponent {
   aboutMe = {
     name: 'Moyalan Jinto Josan',
-    bio: 'Full Stack Developer with expertise in .NET, Java, Angular, Azure, DevOps, and design patterns, specializing in building scalable web applications and optimizing CI/CD pipelines for high-performance, cloud-based solutions.',
     skills: ['Java', 'Spring Boot', '.NET Core', 'Angular', 'Azure', 'SCSS', 'HTML', 'Typescript'],
     profilePicture: '../../my-pic.png', 
     contactInfo: 'jintojosan@gmail.com'
