@@ -1,8 +1,18 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule} from '@angular/material/card';
 import {MatChipsModule} from '@angular/material/chips';
+import { UtilityService } from '../../services/utility.service';
+
+type project={title:string, description:string, 
+  technologies:string[], status:projectStatus,
+  link:string, order:number}
+  enum projectStatus{
+    Ongoing="In Progress",
+    Completed="Completed",
+    Conceptualizing="Design Phase"
+  }
 @Component({
   selector: 'app-projects',
   templateUrl: './projects.component.html',
@@ -11,18 +21,23 @@ import {MatChipsModule} from '@angular/material/chips';
   imports: [MatCardModule, MatChipsModule, MatButtonModule,CommonModule]
 })
 export class ProjectsComponent {
-  projects = [
+
+  projects:project[] = [
     {
-      title: 'Project A',
-      description: 'Description of Project A.',
-      technologies: ['Angular', 'Node.js', 'MongoDB'],
-      link: 'https://github.com'
+      title: 'Chokanzu',
+      description: 'An UI to maintain K8 cluster visually',
+      technologies: ['Angular'],
+      status: projectStatus.Conceptualizing,
+      link: 'https://github.com/jinto-josan/chokanzu',
+      order:2
     },
     {
-      title: 'Project B',
-      description: 'Description of Project B.',
-      technologies: ['React', 'Express', 'MySQL'],
-      link: 'https://github.com'
+      title: 'Mindara',
+      description: 'A E2E testing framework to test a subsystem in absence of downstream system',
+      technologies: ['Angular', 'Java', 'Spring Boot', 'Karate', 'Junit'],
+      link: 'https://github.com/jinto-josan/E2EProduct',
+      status: projectStatus.Ongoing,
+      order:1
     }
-  ];
+  ].sort((a,b)=>a.order-b.order);
 }

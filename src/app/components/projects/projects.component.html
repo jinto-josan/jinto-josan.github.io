@@ -2,6 +2,7 @@
     <mat-card *ngFor="let project of projects" class="project-card">
       <mat-card-header>
         <mat-card-title>{{ project.title }}</mat-card-title>
+        <mat-card-subtitle>{{  project.status }}</mat-card-subtitle>
       </mat-card-header>
       <mat-card-content>
         <p>{{ project.description }}</p>
@@ -13,3 +14,23 @@
     </mat-card>
   </div>
   
+<!-- 
+   <div class="carousel-container">
+    <div class="carousel" cdkScrollable>
+      <mat-card class="project-card" *ngFor="let project of projects">
+        <mat-card-header>
+          <mat-card-title>{{ project.title }}</mat-card-title>
+          <mat-card-subtitle>{{ project.status }}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <p>{{ project.description }}</p>
+          <div class="technologies">
+            <span *ngFor="let tech of project.technologies" class="tech-tag">{{ tech }}</span>
+          </div>
+        </mat-card-content>
+        <mat-card-actions>
+          <a [href]="project.link" mat-button>View Project</a>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div> -->
