@@ -12,6 +12,7 @@ import { CommonModule } from '@angular/common';
 import { DomSanitizer } from '@angular/platform-browser';
 import { SkillsComponent } from './components/skills/skills.component';
 import { UtilityService } from './services/utility.service';
+import { HighlightFirstLettersDirective } from './directives/highlight-first-letters.directive';
 
 
 
@@ -30,6 +31,7 @@ import { UtilityService } from './services/utility.service';
     BooksComponent,
     CodingQuestionsComponent,
     AboutMeComponent, SkillsComponent,
+    HighlightFirstLettersDirective,
     RouterLink,CommonModule
   ]
 })
@@ -67,7 +69,7 @@ export class AppComponent implements AfterViewInit {
   }
   onIntersectionChange(entries: IntersectionObserverEntry[]) {
     entries.forEach(entry => {
-      console.log(entry.target, entry.isIntersecting)
+      // console.log(entry.target, entry.isIntersecting)
       if (entry.isIntersecting) {
         this.activeLink = entry.target.id;
       }
@@ -83,6 +85,6 @@ export class AppComponent implements AfterViewInit {
 
   toggleTheme() {
     this.isLightMode = !this.isLightMode;
-    document.body.classList.toggle('light-theme', this.isLightMode);
+    document.documentElement.classList.toggle('light-theme', this.isLightMode);
   }
 }
