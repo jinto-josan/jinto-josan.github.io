@@ -17,6 +17,10 @@ p {
   display: flex;
   align-items: center;
   margin-bottom: 16px;
+  .image-container{
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .profile-image {
@@ -51,13 +55,3 @@ button {
 button mat-icon {
   margin-right: 8px;
 }
-
-// .social-links a {
-//   text-decoration: none;
-//   margin-right: 15px;
-//   color: #333;
-//   font-size: 1.5em;
-// }
-// .social-links a:hover {
-//   color: #0077b5; /* LinkedIn blue color, change on hover */
-// }

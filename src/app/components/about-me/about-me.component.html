@@ -4,7 +4,13 @@
   </mat-card-header>
   <mat-card-content>
     <div class="profile-info">
-      <img mat-card-avatar [src]="aboutMe.profilePicture" alt="Profile Picture" class="profile-image" />
+      <div class="image-container">
+        <img mat-card-avatar [src]="aboutMe.profilePicture" 
+        alt="Profile Picture" class="profile-image" />
+        <button mat-raised-button color="primary" (click)="downloadResume()">
+          <mat-icon>download</mat-icon> Resume
+        </button>
+      </div>
       <div class="bio-info">
         <p><span class="emoji">👋</span> <span class="bold">Hello!</span></p>
         <p>
@@ -34,10 +40,8 @@
         <p><strong>Contact: </strong>{{ aboutMe.contactInfo }}</p>
       </div>
     </div>
-    <!-- <div class="actions">
-      <button mat-raised-button color="primary" (click)="onEditClick()">
-        <mat-icon>edit</mat-icon> Edit Profile
-      </button>
-    </div> -->
+    <div class="actions">
+      
+    </div>
   </mat-card-content>
 </mat-card>

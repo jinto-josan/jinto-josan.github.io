@@ -19,6 +19,13 @@ export class AboutMeComponent {
     profilePicture: '../../my-pic.png', 
     contactInfo: 'jintojosan@gmail.com'
   };
+  downloadResume(){
+    const resumeUrl = 'resume/MoyalanJintoJosan.pdf';  // Path to the resume file
+    const link = document.createElement('a');
+    link.href = resumeUrl;
+    link.download = resumeUrl.split('/')[1];
+    link.click();  // Simulate a click on the link
+  }
 
 
 }
