@@ -31,7 +31,7 @@ export class ProjectsComponent {
       technologies: ['Angular'],
       status: ProjectStatus.conceptualizing,
       link: 'https://github.com/jinto-josan/chokanzu',
-      order:2
+      order:3
     },
     {
       title: 'Mindara',
@@ -40,6 +40,14 @@ export class ProjectsComponent {
       link: 'https://github.com/jinto-josan/E2EProduct',
       status: ProjectStatus.ongoing,
       order:1
+    },
+    {
+      title: 'ProfilePage',
+      description: 'Its built on angular',
+      technologies: ['Angular', 'Git Workflow'],
+      link: 'https://github.com/jinto-josan/jinto-josan.github.io',
+      status: ProjectStatus.completed,
+      order:2
     }
   ].sort((a,b)=>a.order-b.order);
 }

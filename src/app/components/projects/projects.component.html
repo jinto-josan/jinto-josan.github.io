@@ -23,8 +23,11 @@
         <div class="technologies">
           <mat-chip *ngFor="let tech of project.technologies">{{ tech }}</mat-chip>
         </div>
-        <a mat-button href="{{ project.link }}" target="_blank">View Project</a>
       </mat-card-content>
+      <mat-card-actions>
+        <a mat-button href="{{ project.link }}" target="_blank">View Project</a>
+
+      </mat-card-actions>
     </mat-card>
   </div>
   

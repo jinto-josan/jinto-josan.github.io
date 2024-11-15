@@ -1,12 +1,30 @@
-<div class="book-cards">
-    <mat-card *ngFor="let book of books" class="book-card">
-      <mat-card-header>
-        <mat-card-title>{{ book.title }}</mat-card-title>
-        <mat-card-subtitle>{{ book.author }}</mat-card-subtitle>
-      </mat-card-header>
-      <mat-card-content>
-        <p>Status: {{ book.status }}</p>
-      </mat-card-content>
-    </mat-card>
-  </div>
-  
+<div class="books-container-wrapper">
+<button class="scroll-arrow left-arrow" (click)="scrollLeft()">←</button>
+
+<div class="books-container">
+  <mat-card *ngFor="let book of books" class="book-card">
+    <mat-card-header>
+          <mat-card-title>{{ book.title }}</mat-card-title>
+          <span class="spacer"></span>
+          @switch(book.status){
+            @case(Status.reading){
+              <mat-icon>book</mat-icon>
+            }
+            @case(Status.completed){
+              <mat-icon>check_circle</mat-icon>
+            }
+          }    
+      <mat-card-subtitle>{{ book.author }}</mat-card-subtitle>
+
+      <!-- Genre tag -->
+      <!-- <mat-chip>{{ book.genre }}</mat-chip> -->
+      <!-- Status Indicator -->
+      
+    </mat-card-header>
+    <mat-card-content>
+      <p>{{ book.takeaway }}</p>
+    </mat-card-content>
+  </mat-card>
+</div>
+<button class="scroll-arrow right-arrow" (click)="scrollRight()">→</button>
+</div>
