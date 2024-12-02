@@ -48,25 +48,24 @@ export class AppComponent implements AfterViewInit {
 
 
   private observer: IntersectionObserver;
-  constructor(private iconRegistry:MatIconRegistry, private sanitizer:DomSanitizer){
+  constructor( private util:UtilityService) {
     const options = {
       root: null,
       rootMargin: '0px',
       threshold: 0.3
     };
-    this.registerIcons();
+    util.registerIcons();
 
     this.observer = new IntersectionObserver(this.onIntersectionChange.bind(this), options);
   }
 
-  registerIcons(){    
-    Object.keys(this.icons).forEach(icon=>{
-      this.iconRegistry.addSvgIcon(icon, 
-        this.sanitizer.bypassSecurityTrustResourceUrl(`social-icons/${icon}.svg`));
-    })
-    
+  // registerIcons(){    
+  //   Object.keys(this.icons).forEach(icon=>{
+  //     this.iconRegistry.addSvgIcon(icon, 
+  //       this.sanitizer.bypassSecurityTrustResourceUrl(`social-icons/${icon}.svg`));
+  //   })   
 
-  }
+  // }
   onIntersectionChange(entries: IntersectionObserverEntry[]) {
     entries.forEach(entry => {
       // console.log(entry.target, entry.isIntersecting)

@@ -34,9 +34,19 @@
           diving into <span class="bold">books on personal development and psychology</span> <span
             class="emoji">📚</span>—two passions that help keep me sharp and creatively inspired.
         </p>
-        <div class="skills">
-          <mat-chip *ngFor="let skill of aboutMe.skills">{{ skill }}</mat-chip>
+        <div class="certifications">
+          @for(cert of aboutMe.certifications; track cert.name){
+            <a mat-raised-button [href]="cert.link" target="_blank" >
+              <mat-icon matChipAvatar [svgIcon]="cert.icon" aria-hidden="false" 
+                [ariaLabel]="cert.name"></mat-icon>
+              {{ cert.name }}
+            </a>
+          }
         </div>
+        <!-- <div class="skills">
+          <mat-chip *ngFor="let skill of aboutMe.skills">{{ skill }}</mat-chip>
+        </div> -->
+        
         <p><strong>Contact: </strong>{{ aboutMe.contactInfo }}</p>
       </div>
     </div>

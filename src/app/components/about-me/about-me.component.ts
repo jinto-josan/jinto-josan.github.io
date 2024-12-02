@@ -16,6 +16,8 @@ export class AboutMeComponent {
   aboutMe = {
     name: 'Moyalan Jinto Josan',
     skills: ['Java', 'Spring Boot', '.NET Core', 'Angular', 'Azure', 'SCSS', 'HTML', 'Typescript'],
+    certifications: [{name:"Azure Administrator Associate", icon:"microsoft_ass_cert", link:"https://drive.google.com/file/d/1KlLLI9M4ct2KkSM4id6JMfWJUQSZTzMT/view?usp=drive_link&trk=public_profile_see-credential"}, 
+      {name:"Azure Data Engineer Associate",icon:"microsoft_ass_cert", link:"https://drive.google.com/file/d/12BClxFAdZ1cpkyTynukbzCJ5TPh8M83O/view?usp=drive_link&trk=public_profile_see-credential"}],
     profilePicture: '../../my-pic.png', 
     contactInfo: 'jintojosan@gmail.com'
   };

@@ -31,7 +31,15 @@ export class ProjectsComponent {
       technologies: ['Angular'],
       status: ProjectStatus.conceptualizing,
       link: 'https://github.com/jinto-josan/chokanzu',
-      order:3
+      order:1
+    },
+    {
+      title: 'OMS',
+      description: 'A Full blown Order Management System which is reactive and scalable',
+      technologies: ['Angular', '.NET', 'C#'],
+      link: 'https://github.com/jinto-josan/OrderManagementSystem',
+      status: ProjectStatus.ongoing,
+      order:4
     },
     {
       title: 'Mindara',
@@ -39,7 +47,7 @@ export class ProjectsComponent {
       technologies: ['Angular', 'Java', 'Spring Boot', 'Karate', 'Junit'],
       link: 'https://github.com/jinto-josan/E2EProduct',
       status: ProjectStatus.ongoing,
-      order:1
+      order:3
     },
     {
       title: 'ProfilePage',
@@ -49,5 +57,5 @@ export class ProjectsComponent {
       status: ProjectStatus.completed,
       order:2
     }
-  ].sort((a,b)=>a.order-b.order);
+  ].sort((a,b)=>b.order-a.order);
 }

@@ -34,12 +34,15 @@ p {
   flex: 1;
 }
 
-.skills {
+.skills,.certifications {
   margin-top: 8px;
+  mat-chip {
+    margin-right: 8px;
+  }
 }
-
-.skills mat-chip {
-  margin-right: 8px;
+.certifications{
+  display: flex;
+  justify-content: flex-start;
 }
 
 .actions {
