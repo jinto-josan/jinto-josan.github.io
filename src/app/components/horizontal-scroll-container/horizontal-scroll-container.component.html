@@ -1,0 +1,9 @@
+<div class="scroll-container-wrapper">
+<button class="scroll-arrow left-arrow" (click)="scrollLeft()">←</button>
+
+    <div #scrollContainer class="scroll-container">
+        <ng-content></ng-content>
+
+    </div>
+<button class="scroll-arrow right-arrow" (click)="scrollRight()">→</button>
+</div>

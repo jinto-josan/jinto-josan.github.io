@@ -1,0 +1,40 @@
+<mat-card  class="item-card">
+    <mat-card-header class="item-header">
+      <mat-card-title>{{ item.title }}</mat-card-title>
+      <span class="spacer"></span>
+      <div class="status-container">
+          @switch(item.status){
+            @case(ItemStatus.ongoing){
+              <mat-icon>autorenew</mat-icon>
+            }
+            @case(ItemStatus.conceptualizing){
+              <mat-icon>build</mat-icon>
+            }
+            @case(ItemStatus.completed){
+              <mat-icon>check_circle</mat-icon>
+            }
+            @case(ItemStatus.reading){
+                <mat-icon>book</mat-icon>
+            }
+            @case(ItemStatus.completed){
+                <mat-icon>check_circle</mat-icon>
+            }
+          }
+        <span>{{util.getEnumName(ItemStatus, item.status )| titlecase}}</span>
+      </div>
+      @if(item.subtitle){
+        <mat-card-subtitle>{{ item.subtitle }}</mat-card-subtitle>
+      }
+    </mat-card-header>
+    <mat-card-content class="item-content">
+      <p>{{ item.description }}</p>
+      <div class="chips">
+        <mat-chip *ngFor="let chip of item.chips">{{ chip }}</mat-chip>
+      </div>
+    </mat-card-content>
+    <mat-card-actions class="item-actions">
+        @for (action of item.actions; track action.text) {
+            <a mat-button href="{{ action.link }}" target="_blank">{{action.text}}</a>
+        }
+    </mat-card-actions>
+  </mat-card>

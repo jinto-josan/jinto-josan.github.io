@@ -1,0 +1,57 @@
+.scroll-container-wrapper {
+    position: relative; /* For positioning the arrows */
+    overflow: hidden; /* Hide the scrollbar */
+    display: flex;
+    align-items: center; /* Vertically center the arrows */
+    width: 100%; /* Full width */
+    margin-top: 16px;
+  
+  }
+  .scroll-container {
+    display: flex;  /* Arrange cards horizontally */
+    overflow-x: auto; /* Allow horizontal scrolling */
+    gap: 16px; /* Add spacing between the cards */
+    scroll-snap-type: x mandatory; /* Snap scrolling for a smoother experience */
+    overflow-y: hidden;
+    --webkit-overflow-scrolling: touch; /* Smooth scrolling on mobile */
+    ::-webkit-scrollbar { /* chrome */
+      display: none;
+    }
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;
+  }
+  
+  
+  
+  .scroll-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.2);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 1; /* Keep the arrows above the scrollable content */
+  }
+  
+  .left-arrow {
+    left: 0;
+  }
+  
+  .right-arrow {
+    right: 0;
+  }
+  
+  /* Arrow hover effect */
+  .scroll-arrow:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  
+  
+  
+    
+  
+    

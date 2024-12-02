@@ -2,17 +2,18 @@ import { AfterViewInit, Component, ElementRef, inject, ViewChild, ViewChildren }
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule, MatIconRegistry } from '@angular/material/icon';
 import { AboutMeComponent } from './components/about-me/about-me.component';
-import { BooksComponent } from './components/books/books.component';
 import { CodingQuestionsComponent } from './components/coding-questions/coding-questions.component';
-import { ProjectsComponent } from './components/projects/projects.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatTabsModule} from '@angular/material/tabs'
 import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { DomSanitizer } from '@angular/platform-browser';
 import { SkillsComponent } from './components/skills/skills.component';
 import { UtilityService } from './services/utility.service';
 import { HighlightFirstLettersDirective } from './directives/highlight-first-letters.directive';
+import { ProjectData } from './components/data/project-data';
+import { BooksData } from './components/data/book-data';
+import { ScrollContainerItemComponent } from './components/scroll-container-item/scroll-container-item.component';
+import { HorizontalScrollContainerComponent } from './components/horizontal-scroll-container/horizontal-scroll-container.component';
 
 
 
@@ -26,13 +27,11 @@ import { HighlightFirstLettersDirective } from './directives/highlight-first-let
     MatButtonModule,
     MatIconModule,
     MatToolbarModule,
-    MatTabsModule,
-    ProjectsComponent,
-    BooksComponent,
+    MatTabsModule,    
     CodingQuestionsComponent,
     AboutMeComponent, SkillsComponent,
     HighlightFirstLettersDirective,
-    RouterLink,CommonModule
+    RouterLink,CommonModule, ScrollContainerItemComponent, HorizontalScrollContainerComponent
   ]
 })
 export class AppComponent implements AfterViewInit {
@@ -46,6 +45,8 @@ export class AppComponent implements AfterViewInit {
   @ViewChildren('section') sections:ElementRef[]|undefined;
   utility=inject(UtilityService)
 
+  projects=ProjectData;
+  books=BooksData;
 
   private observer: IntersectionObserver;
   constructor( private util:UtilityService) {
@@ -59,13 +60,6 @@ export class AppComponent implements AfterViewInit {
     this.observer = new IntersectionObserver(this.onIntersectionChange.bind(this), options);
   }
 
-  // registerIcons(){    
-  //   Object.keys(this.icons).forEach(icon=>{
-  //     this.iconRegistry.addSvgIcon(icon, 
-  //       this.sanitizer.bypassSecurityTrustResourceUrl(`social-icons/${icon}.svg`));
-  //   })   
-
-  // }
   onIntersectionChange(entries: IntersectionObserverEntry[]) {
     entries.forEach(entry => {
       // console.log(entry.target, entry.isIntersecting)

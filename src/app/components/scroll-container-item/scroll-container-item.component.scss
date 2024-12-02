@@ -1,0 +1,41 @@
+ 
+.item{ 
+
+    &-card {
+      width: 25vw; 
+      min-height: 55vh;
+      flex-shrink: 0; /* Prevent cards from shrinking */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 8px; 
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease;
+      &:hover {
+        transform: scale(1.05);
+      }
+      
+    }
+    &-actions {
+      display: flex;
+      justify-content: flex-end;
+    }
+    
+  }
+  mat-chip {
+    margin: 5px;
+  }
+  mat-icon{
+    margin-right: 8px;
+    font-size: 20px;
+  }
+  .status-container {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 5px 10px;
+    border-radius: 20px;
+  }
+  .spacer {
+    flex: 1 1 auto;
+  }
