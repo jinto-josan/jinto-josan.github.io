@@ -3,12 +3,13 @@
 
     &-card {
       width: 25vw; 
-      min-height: 55vh;
+      height: 65vh;
       flex-shrink: 0; /* Prevent cards from shrinking */
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       border-radius: 8px; 
       display: flex;
       flex-direction: column;
+      justify-content: space-between;
       transition: transform 0.3s ease;
       &:hover {
         transform: scale(1.05);
